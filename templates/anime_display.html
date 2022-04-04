@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <center style="color: #FFF">
+        <h1>Anime Recommendation</h1>
+        <table>
+             <thead>
+                 <tr>
+                     <th>Rank</th>
+                     <th>Anime</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for rank in ani_dict %}
+                    <tr>
+                        <td>{{ rank }}</td>
+                        <td>{{ ani_dict[rank] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </center>
+{% endblock %}

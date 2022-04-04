@@ -5,9 +5,8 @@
         <center>
             <h3> Anime Recommender </h3>
         <div>
-            <form method="POST" style="text-align: center">
-
-                    <input type="text" placeholder="Enter your fav anime" list="animeList">
+            <form method="POST" style="text-align: center" action="/display">
+                    <input type="text" placeholder="Enter your fav anime" list="animeList" name="anime">
                     <datalist id="animeList">
                             {% for ani in ani_cols %}
                                 <option>  {{ ani }} </option>
