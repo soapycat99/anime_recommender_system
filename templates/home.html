@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+        <center>
+            <h3> Anime Recommender </h3>
+        <div>
+            <form method="POST" style="text-align: center">
+
+                    <input type="text" placeholder="Enter your fav anime" list="animeList">
+                    <datalist id="animeList">
+                            {% for ani in ani_cols %}
+                                <option>  {{ ani }} </option>
+                            {% endfor %}
+                    </datalist>
+                    <input type="submit" value="Get your anime">
+            </form>
+        </div>
+
+        </center>
+
+{% endblock %}
