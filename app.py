@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import pickle
-import numpy as np
 
 ani_df = pickle.load(open('anime_sim_df.pkl','rb'))
 ani_cols = list(ani_df.columns)
@@ -11,6 +10,14 @@ app = Flask(__name__)
 @app.route('/')
 def main():
     return render_template('home.html', ani_cols = ani_cols)
+
+@app.route('/display', methods=['POST'])
+def display():
+    ani = request.form.get('anime')
+    print(ani)
+    ani_dic = {index: anime for index, anime in enumerate(anime_rec_list(ani), start=1)}
+    print(ani_dic)
+    return render_template('anime_display.html', ani_dict = ani_dic)
 
 def anime_rec_list(ani_name):
     rec_list = []
@@ -26,18 +33,3 @@ def anime_rec_list(ani_name):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
