@@ -12,7 +12,7 @@ Animea Dataset
 | `rating`    |  average rating out of 10 for this anime.                      |
 | `members`   | number of community members that are in this anime's "group".  |
 
-Rating Dataset(Because of its large volume, it couldn't be uploaded onto github)
+Rating Dataset(Because of its large volume, it's not able to be uploaded onto github)
 
 | Column Name | Description                                                                        |
 |-------------|------------------------------------------------------------------------------------|
